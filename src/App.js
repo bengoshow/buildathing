@@ -1,25 +1,19 @@
+import React, {Component} from 'react';
 import logo from './logo.svg';
-import './App.css';
+import GetListings from './components/Listings/GetListings';
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends Component {
+  render() {
+    return (
+      <div className="App">
+        <div className="text-center">
+          <img src={logo} alt="Sneaky Sasquatch" className="max-h-40 mx-auto mb-2" />
+        </div>
+        <h1 className="text-3xl mb-4 text-center font-bold">Sneaky Sasquatch</h1>
+        <GetListings />
+      </div>
+    );
+  }
 }
 
 export default App;
