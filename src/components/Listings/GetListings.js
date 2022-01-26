@@ -1,9 +1,6 @@
 import React, {Component} from 'react';
-import './GetListings.css';
-import TextTruncate from 'react-text-truncate'; // recommend
-
-// get posts from online api
-// it's return a json file
+import Image from '../Image';
+import TextTruncate from 'react-text-truncate';
 class GetListings extends Component {
   constructor(props) {
     super(props);
@@ -49,8 +46,10 @@ class GetListings extends Component {
           <ol className="space-y-6">
             {posts.map((post) => (
               <li key={post.data.id} id={post.data.id}>
-                <div className="grid grid-cols-2">
-                  <img src={post.data.thumbnail} alt="" className="auto-cols-min" />
+                <div className="grid grid-cols-[140px_auto] gap-5">
+                  <div>
+                    <Image src={post.data.thumbnail} width={post.data.thumbnail_width} height={post.data.thumbnail_height} alt={post.data.title} />
+                  </div>
                   <div>
                     <h2 className="text-xl font-bold">{post.data.title}</h2>
                     <TextTruncate line={2} element="span" truncateText="…" text={post.data.selftext} />
