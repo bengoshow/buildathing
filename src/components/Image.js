@@ -5,9 +5,9 @@ function Image(props) {
     imgHeight = props.height,
     imgWidth = props.width;
   if (srcExists !== 'spoiler' && imgHeight && imgWidth) {
-    return <img src={props.src} alt={props.alt} />;
+    return <img src={props.src} alt={props.alt} className="w-full" />;
   }
-  return <img src="http://via.placeholder.com/640x360?text=Sneaky+Image" alt="" />;
+  return <img className="w-full" src="http://via.placeholder.com/640x360?text=Sneaky+Image" alt="" />;
 }
 
 export default Image;

@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
-import Image from '../Image';
-import TextTruncate from 'react-text-truncate';
+import Listing from './Listing';
+import './Listings.css';
+
 class GetListings extends Component {
   constructor(props) {
     super(props);
@@ -8,6 +9,7 @@ class GetListings extends Component {
       error: null,
       isLoaded: false,
       posts: [],
+      sortDir: 'asc',
     };
   }
 
@@ -42,23 +44,13 @@ class GetListings extends Component {
       return <div>Loading ...</div>;
     } else {
       return (
-        <div className="m-6">
-          <ol className="space-y-6">
+        <table className="listings" cellPadding="10" cellSpacing="10">
+          <tbody>
             {posts.map((post) => (
-              <li key={post.data.id} id={post.data.id}>
-                <div className="grid grid-cols-[140px_auto] gap-5">
-                  <div>
-                    <Image src={post.data.thumbnail} width={post.data.thumbnail_width} height={post.data.thumbnail_height} alt={post.data.title} />
-                  </div>
-                  <div>
-                    <h2 className="text-xl font-bold">{post.data.title}</h2>
-                    <TextTruncate line={2} element="span" truncateText="…" text={post.data.selftext} />
-                  </div>
-                </div>
-              </li>
+              <Listing key={post.data.id} data={post.data} />
             ))}
-          </ol>
-        </div>
+          </tbody>
+        </table>
       );
     }
   }
