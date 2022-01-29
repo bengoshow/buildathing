@@ -10,15 +10,20 @@ class Listing extends Component {
       faveText: 'Fave It!',
     };
     // Binding 'this' keyword
+    // https://blog.logrocket.com/a-guide-to-react-onclick-event-handlers-d411943b14dd/
     this.setFave = this.setFave.bind(this);
   }
 
   setFave() {
     // toggle Fave state
+    // https://stackoverflow.com/questions/40359800/how-to-toggle-boolean-state-of-a-react-component
     this.setState((prevState) => ({
       isFave: !prevState.isFave,
       faveText: !prevState.isFave ? '❤️' : 'Fave It!',
     }));
+
+    // TODO: store state in localstorage
+    // https://www.tutorialspoint.com/localstorage-in-reactjs
   }
 
   render() {

@@ -1,5 +1,6 @@
 import {FunctionComponent} from 'react';
 
+// https://www.telerik.com/blogs/react-class-component-vs-functional-component-how-choose-whats-difference
 const Logo: FunctionComponent = () => {
   return (
     <div className="text-center">

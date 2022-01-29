@@ -1,1 +1,8 @@
-
+button.descending:after {
+  content: '⬆️';
+  margin-left: 5px;
+}
+button.ascending:after {
+  content: '⬇️';
+  margin-left: 5px;
+}
